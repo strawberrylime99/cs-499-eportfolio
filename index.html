@@ -4,21 +4,328 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Estera Jablonska | CS 499 ePortfolio</title>
+  <style>
+    :root {
+      --text: #1f2933;
+      --muted: #52606d;
+      --line: #d9e2ec;
+      --panel: #f8fafc;
+      --accent: #8f3f62;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: #ffffff;
+    }
+
+    header,
+    main,
+    footer {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.25;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      margin-top: 34px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      font-size: 1.45rem;
+    }
+
+    h3 {
+      margin-top: 22px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    a {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    nav {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text);
+      background: var(--panel);
+      font-weight: 600;
+    }
+
+    .intro {
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 18px;
+      background: var(--panel);
+      margin: 16px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    ul {
+      margin-top: 8px;
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    video {
+      width: 100%;
+      max-height: 520px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #000000;
+      margin-top: 10px;
+    }
+
+    footer {
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>Estera Jablonska</h1>
-  <h2>CS 499 ePortfolio</h2>
+  <header>
+    <h1>Estera Jablonska</h1>
+    <p class="intro">
+      CS 499 Computer Science ePortfolio. This portfolio presents my Lipstick Matcher
+      capstone artifact, including the original code, enhanced code, code review,
+      enhancement narratives, and professional self-assessment.
+    </p>
+    <nav aria-label="Portfolio navigation">
+      <a href="#self-assessment">Self-Assessment</a>
+      <a href="#code-review">Code Review</a>
+      <a href="#artifacts">Artifacts</a>
+      <a href="#narratives">Narratives</a>
+      <a href="#outcomes">Course Outcomes</a>
+    </nav>
+  </header>
 
-  <p>
-    This site will include my code review, original and enhanced artifacts, narratives, and professional self-assessment.
-  </p>
+  <main>
+    <section id="self-assessment">
+      <h2>Professional Self-Assessment</h2>
+      <p>
+        Completing the Computer Science program and developing this ePortfolio helped me
+        connect my existing software engineering experience with a stronger academic
+        foundation in computer science. I returned to finish the final year of my degree
+        after taking a long break, and the capstone became a practical way to show both
+        technical growth and follow-through. My goal throughout the project was to
+        demonstrate that I can take an existing application, evaluate its weaknesses, and
+        improve it using professional software engineering practices.
+      </p>
+      <p>
+        My selected artifact, Lipstick Matcher, began as a personal web application built
+        to experiment with face-api.js, facial landmark detection, and local image
+        analysis in the browser. The original version proved the basic concept, but the
+        architecture, recommendation logic, and data storage approach needed stronger
+        structure. Through the capstone enhancements, I refactored the application into
+        clearer modules, improved the shade-matching algorithm, added automated tests,
+        and introduced a PostgreSQL-backed shade catalog with a server-side data access
+        layer.
+      </p>
+      <p>
+        The project reflects my interest in full-stack application development. On the
+        front end, I worked with SvelteKit components, upload handling, progress states,
+        and user-facing result presentation. In the application logic, I improved the
+        recommendation process by using RGB, HSL, and Lab-style lightness calculations,
+        multi-image sample aggregation, undertone detection, weighted scoring, and ranked
+        shade results. On the back end, I added database schema and seed files, a
+        repository layer, API filtering, and fallback behavior so the application remains
+        usable even when a database connection is not configured.
+      </p>
+      <p>
+        The Computer Science program also strengthened areas beyond this artifact. Course
+        work in software testing helped me better appreciate automated validation and the
+        role of repeatable tests in maintaining quality. Database course work helped me
+        think more carefully about schema design, relationships, queries, and how data
+        should be organized for future growth. Software development lifecycle course work
+        helped me better understand planning, communication, stakeholder expectations,
+        and how responsibilities fit together on larger teams.
+      </p>
+      <p>
+        Collaboration and communication are also represented in this portfolio. The code
+        review video explains technical decisions for an audience of peers or managers,
+        while the written narratives describe what changed, why the changes mattered, and
+        how each enhancement connects to the course outcomes. Those materials show my
+        ability to communicate technical work clearly, not just complete the code itself.
+      </p>
+      <p>
+        Security and privacy were important considerations because Lipstick Matcher works
+        with user-uploaded photos. I kept image analysis local to the browser rather than
+        storing user images, used environment-based database configuration, avoided
+        committing local secrets, validated API filter input, used parameterized database
+        queries, and added basic security headers. These choices reflect a security
+        mindset that considers privacy and misuse risks early in the design.
+      </p>
+      <p>
+        Together, the artifacts in this portfolio show growth across software design,
+        algorithms and data structures, databases, testing, communication, and security.
+        The enhanced Lipstick Matcher project represents the kind of work I want to
+        continue doing professionally: building practical, maintainable, user-centered
+        full-stack software that solves a real problem and can continue to evolve.
+      </p>
+    </section>
 
-  <h3>Planned Contents</h3>
-  <ul>
-    <li>Code Review</li>
-    <li>Artifact Enhancements</li>
-    <li>Narratives</li>
-    <li>Professional Self-Assessment</li>
-  </ul>
+    <section id="code-review">
+      <h2>Code Review</h2>
+      <p>
+        The code review was completed before the major enhancements. It walks through the
+        original application, identifies areas for improvement, and explains the planned
+        work across software design, algorithms and data structures, and databases.
+      </p>
+      <video controls preload="metadata">
+        <source src="media/final-code-review.mp4" type="video/mp4" />
+        Your browser does not support embedded video. Use the link below to open the file.
+      </video>
+      <ul>
+        <li><a href="media/final-code-review.mp4">Open code review video</a></li>
+        <li><a href="documents/code-review-script.docx">Download code review script</a></li>
+      </ul>
+    </section>
+
+    <section id="artifacts">
+      <h2>Artifacts</h2>
+      <div class="grid">
+        <article class="panel">
+          <h3>Original Artifact</h3>
+          <p>
+            The original Lipstick Matcher artifact before the CS 499 enhancements.
+          </p>
+          <p>
+            <a href="artifacts/lipstickmatcher-original-artifact.zip">Download original artifact</a>
+          </p>
+        </article>
+        <article class="panel">
+          <h3>Enhanced Artifact</h3>
+          <p>
+            The final enhanced source code package with modular analysis logic,
+            improved matching, tests, API work, and database files.
+          </p>
+          <p>
+            <a href="artifacts/lipstickmatcher-enhanced-final-artifact.zip">Download enhanced artifact</a>
+          </p>
+        </article>
+        <article class="panel">
+          <h3>Project Repository</h3>
+          <p>
+            The working Lipstick Matcher repository contains the enhanced application
+            source code and project history.
+          </p>
+          <p>
+            <a href="https://github.com/strawberrylime99/LipstickMatcher">View Lipstick Matcher on GitHub</a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="narratives">
+      <h2>Enhancement Narratives</h2>
+      <div class="grid">
+        <article class="panel">
+          <h3>Software Design and Engineering</h3>
+          <p>
+            This narrative explains the refactor from a large page-centered application
+            into clearer analysis, recommendation, and component modules.
+          </p>
+          <p>
+            <a href="documents/milestone-2-software-design-narrative.docx">Download Milestone Two narrative</a>
+          </p>
+        </article>
+        <article class="panel">
+          <h3>Algorithms and Data Structures</h3>
+          <p>
+            This narrative explains the improved matching workflow, multi-image sampling,
+            color processing, weighted scoring, and recommendation ranking.
+          </p>
+          <p>
+            <a href="documents/milestone-3-algorithms-narrative.docx">Download Milestone Three narrative</a>
+          </p>
+        </article>
+        <article class="panel">
+          <h3>Databases</h3>
+          <p>
+            This narrative explains the PostgreSQL shade catalog, seed data, repository
+            layer, API filtering, and security-minded query handling.
+          </p>
+          <p>
+            <a href="documents/milestone-4-databases-narrative.docx">Download Milestone Four narrative</a>
+          </p>
+        </article>
+      </div>
+      <h3>Enhancement Plan</h3>
+      <p>
+        The original enhancement plan from Module One is included as supporting material.
+      </p>
+      <p>
+        <a href="documents/module-one-enhancement-plan.docx">Download Module One enhancement plan</a>
+      </p>
+    </section>
+
+    <section id="outcomes">
+      <h2>Course Outcomes</h2>
+      <p>
+        The enhanced artifact and written materials demonstrate progress across the CS
+        499 course outcomes:
+      </p>
+      <ul>
+        <li>Communicating technical decisions through the code review, narratives, and portfolio presentation.</li>
+        <li>Designing and evaluating a computing solution through modular application refactoring.</li>
+        <li>Applying algorithmic principles through improved color processing, sample aggregation, scoring, and ranking.</li>
+        <li>Using professional tools and practices including SvelteKit, TypeScript, Vitest, PostgreSQL, and API design.</li>
+        <li>Applying a security mindset through local image analysis, environment-based configuration, API validation, parameterized queries, and privacy-focused design choices.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>CS 499 ePortfolio for Estera Jablonska.</p>
+  </footer>
 </body>
 </html>
